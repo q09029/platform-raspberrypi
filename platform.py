@@ -73,11 +73,11 @@ class RaspberrypiPlatform(PlatformBase):
         if "arduino" in frameworks:
             if build_core == "arduino":
                 self.frameworks["arduino"]["package"] = "framework-arduino-mbed"
-                self.packages["framework-arduinopico"]["optional"] = True
+                self.packages["arduino-pico-ArduboyMod"]["optional"] = True
                 self.packages["toolchain-rp2040-earlephilhower"]["optional"] = True
                 self.packages.pop("toolchain-rp2040-earlephilhower", None)
             elif build_core == "earlephilhower":
-                self.frameworks["arduino"]["package"] = "framework-arduinopico"
+                self.frameworks["arduino"]["package"] = "arduino-pico-ArduboyMod"
                 self.packages["framework-arduino-mbed"]["optional"] = True
                 self.packages.pop("toolchain-gccarmnoneeabi", None)
                 self.packages["toolchain-rp2040-earlephilhower"]["optional"] = False
